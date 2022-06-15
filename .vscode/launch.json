@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "justMyCode": true,
+            "args": [
+                // "tests/test_budgets.py",
+                "--headed",
+                // "--base-url",
+                // "127.0.0.1:3000"
+            ],
+            "python": "${command:python.interpreterPath}"
+        }
+    ]
+}

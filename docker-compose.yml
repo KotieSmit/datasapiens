@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  automation_tests:
+    image: datasaphiens-qa-task
+
+    build: .
+    container_name: automation_tests
+    restart: always
+    network_mode: host
+    environment:
+      HOST_IP: http://${DOCKER_GATEWAY_HOST:-host.docker.internal}:3567

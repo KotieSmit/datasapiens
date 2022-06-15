@@ -1,0 +1,5 @@
+report.html
+venv/
+browser_state/
+.vscode/
+.pytest_cache/
