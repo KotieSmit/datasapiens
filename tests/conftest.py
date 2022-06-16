@@ -30,7 +30,6 @@ def context(
     """Instantiate a browser context, and load state"""
     os.system("rm -rf ./browser_state")
     os.system("cp -r ./browser_states/signed-up ./browser_state ")
-    # browser_type = BrowserType()
     if base_url == "":
         base_url = "http://localhost:3567"
     context = browser_type.launch_persistent_context(
@@ -44,22 +43,10 @@ def context(
             "args": ["--no-sandbox"],
         },
     )
-    # context = browser_type.launch( **{
-    #     **browser_type_launch_args,
-    #     **browser_context_args,
-    # })
-    # context = browser_type.chromium.launch(
-    #     **{
-    #     **browser_type_launch_args,
-    #     **browser_context_args,}
-    # )
-    # pw = sync_playwright().start()
-    # context = pw.chromium.launch(**{
-    #     **browser_type_launch_args,
-    #     **browser_context_args,})
+  
     yield context
 
-    # context.close()
+  
 
 
 @pytest.fixture(autouse=True)
@@ -69,16 +56,11 @@ def resource(context):
     context.pages[-1].close()
 
 
-# set up a hook to be able to check if a test has failed
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     # execute all other hooks to obtain the report object
     outcome = yield
     rep = outcome.get_result()
-
-    # set a report attribute for each phase of a call, which can
-    # be "setup", "call", "teardown"
-
     setattr(item, "rep_" + rep.when, rep)
 
 
