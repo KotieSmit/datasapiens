@@ -28,7 +28,7 @@ if the application under test is available on a different url or port use below.
 NOTE: *url must be in a 'http://' format*
 
 ### Reporting
-A sample of what a basic report look like is included. Link: [Sample basic report](http://https://github.com/KotieSmit/datasapiens/blob/master/report/report.html "Sample basic report")
+A sample of what a basic report look like is included. Link: [Sample basic report](https://github.com/KotieSmit/datasapiens/blob/master/report/Pytest%20sample%20report.png "Sample basic report")
 Other reporting options like allure-reports are available, and needs a basic hosting platform to be hosted on. 
 
 ### Note to reviewer
